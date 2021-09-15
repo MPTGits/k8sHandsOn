@@ -1,0 +1,16 @@
+Commands:
+-'minikube service list' -> Gives us allocated resources and ports
+-'kubectl describe svc <service>' -> Describes a service
+-'kubectl get pods | --show-lables | -l <selector_to_filter_by>'
+
+Tips:
+-Pods are throw away, the are short lived and restart
+-Service are a long running object, they have ip adress and stable fixed pods
+-Pods can have key-value pairs called labels
+-Service have Selectors that are key-value pairs and it matches them to the pod with the same lable
+-Service v1Core
+-Name of service is critical it is important to give good names
+-No LoadBalancer locally so we can't use it as a type of the service(locally we can user CluserIP for internal traffic in the cluster or NodePort)
+-We can do multiple deployments thanks to labels and just change the label to the release we want to use in the service
+-It is common to define multiple version definitions in the same file
+-Sometimes browsers cache content so we can do a 'hard' refresh when we apply a pod/service with CTRL+F5
