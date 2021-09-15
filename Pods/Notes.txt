@@ -1,0 +1,13 @@
+Commands:
+*'kubectl get all' -> Shows everything we defined in our K8s cluster
+*'kubectl apply -f <file_name>.yaml' -> Creates our new pod
+*'kubectl describe pod <pod_name>' -> Detailed info about pod(first thing to do if error with pod)
+*'kubectl exec <pod_name> <command_to_execute>' -> Executes the command for the given pod
+*'kubectl -it exec <pod> sh' -> Connect ot the shell cmd of the pod
+*'kubectl get pods --watch' -> Status of pod as it is in progress
+*'minikube ip' -> Returns ip of our minikube cluster
+
+
+Tips:
+-Pod names have to be lower case?
+-Pods are not visable outside K8s cluster
