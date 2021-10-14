@@ -4,7 +4,7 @@ metadata:
   name: fleetman-activatemq
 spec:
   selector:
-    app: activate-mq
+    app: active-mq
 
   ports:
     - name: http
