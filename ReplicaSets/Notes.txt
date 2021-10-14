@@ -1,0 +1,9 @@
+Commands:
+-'kubectl get all' -> Returns all resources
+-'kubectl delete <svc/po> <name of service/name of pod>'
+
+
+Tips:
+- Pod can be killed if using to many resources
+- We can deploy a ReplicaSet which is an extra configuration to a pod(we specify how many replicas of a pod we want to run)
+
