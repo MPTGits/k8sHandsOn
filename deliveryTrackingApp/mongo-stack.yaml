@@ -15,7 +15,44 @@ spec:
       containers:
         - name: mongodb
           image: mongo:3.6.5-jessie
-
+          volumeMounts:
+            - name: mongo-persistent-storage
+              mountPath: /data/db
+      volumes:
+        - name: mongo-persistent-storage
+          #Pointer to the configuration of how we want the mount to be implemented
+          persistentVolumeClaim:
+            claimName: mongo-pvc
+          #Actually supplying the mount configuration
+          # hostPath:
+          #   path: D:/k8sHandsOn/mnt/directory
+          #   type: DirectoryOrCreate
+---
+#Local storage - mongo-pvc (what do we want)
+apiVersion: v1
+kind: PeristentVolumeClaim
+metadata:
+  name: mongo-pvc
+spec:
+  storageClassName: mylocalStorage
+  resources:
+    request:
+      storage: 20Gi
+---
+#how we want it implemented
+apiVersion: v1
+kind: PersisentVolume
+metadata:
+  name: local-storage
+spec:
+  storageClassName: mylocalStorage
+  capacity:
+    storage: 20Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: D:/k8sHandsOn/mnt/directory
+    type: DirectoryOrCreate
 ---
 
 kind: Service
