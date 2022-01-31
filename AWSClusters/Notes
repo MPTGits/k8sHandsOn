@@ -1,0 +1,30 @@
+-Collection of worker Nodes and a Master Node
+-Two of the best tools to automate clusters: KPOS and EKS
+-KPOS
+    -Is a older than EKS
+    -KPOS is officaly part of the K8S infrastructure
+    -Responsable for managing master node
+-EKS
+    -Is part of AWS itself
+    -NOT responsable for managing master node and you don't see the master node at all
+
+-KPOS VS EKS
+    *KPOS
+    Pros:
+        -Long history and is widly used
+        -Easy to use?
+    Cons:
+        -You have to manage the master node
+        -By default yuo get a single master started(is configurable so more can be started up)
+        -Feels more work than EKS?
+    *EKS
+    Pros:
+        -Is really popular
+        -Using eksctl is quite simple to use
+        -No management of the Master node is requierd
+    Cons:
+        -Needs eksctl(3rd party tool) to make it usable
+-       -The GUI(as of July 2020) is very poor
+        -EKS integrates good with AWS Fargate
+
+
